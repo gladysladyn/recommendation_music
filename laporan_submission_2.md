@@ -103,7 +103,7 @@ Berikut adalah hasil visualisasi popularitas lagu:
 ![output1](https://github.com/user-attachments/assets/cdc962c6-ec96-4713-bf28-ece0cbb76b13)
 
 
-6. Komposisi Genre Teratas   
+6. Komposisi Genre Terbanyak   
 Sebuah plot batang horizontal digunakan untuk menampilkan 10 genre dengan frekuensi kemunculan tertinggi dalam dataset (berdasarkan kolom ï»¿genre sebelum nama variabel diubah). Visualisasi ini secara efektif mengidentifikasi genre-genre musik yang paling dominan atau paling banyak terwakili dalam data, genre genre tersebut adalah comedy, soundtrack, indie, jazz, pop, electronic, children's music, folk, hip-hop, rock. Ini memberikan pemahaman tentang genre mana yang paling banyak terwakili dalam data.   
 Insight ini penting karena menunjukkan bahwa dataset memiliki representasi yang kuat untuk genre-genre tersebut. Hal ini bisa menjadi pertimbangan dalam mengevaluasi seberapa baik sistem rekomendasi dapat melayani preferensi pada genre-genre populer ini, atau sebaliknya, bagaimana sistem dapat memberikan rekomendasi untuk genre yang kurang dominan. Pemahaman komposisi genre juga berguna jika ada keinginan untuk membuat sistem rekomendasi yang lebih spesifik atau seimbang antar genre.   
 Berikut adalah hasil visualisasi komposisi genre teratas :   
