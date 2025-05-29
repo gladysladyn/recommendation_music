@@ -131,7 +131,7 @@ Berikut adalah hasil visualisasi distribusi durasi lagu :
 ![output4](https://github.com/user-attachments/assets/a1b6e7f9-48d8-422e-be0e-4c6b8c8ee370)
  
 
-9. Artis dengan Kontribusi Lagu Terbanyak
+9. Artis dengan Kontribusi Lagu Terbanyak   
 Plot batang ini menampilkan 10 artis yang memiliki jumlah lagu paling banyak dalam dataset. Visualisasi ini memberikan gambaran tentang artis-artis mana yang paling produktif atau paling banyak terwakili dalam data yang digunakan untuk proyek ini. Grafik ini secara visual menunjukkan artis mana yang mendominasi dataset dari segi jumlah lagu. Giuseppe Verdi, misalnya, terlihat memiliki kontribusi lagu tertinggi secara signifikan dibandingkan artis lainnya dalam 10 besar.   
 Berikut adalah hasil visualisasi kontribusi lagu terbanyak : 
 ![output6](https://github.com/user-attachments/assets/4468ac40-4011-4d2c-91f2-cfa239dc17c6)
