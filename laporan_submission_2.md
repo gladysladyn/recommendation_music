@@ -91,7 +91,7 @@ Untuk memahami sebaran dan tendensi sentral dari fitur-fitur numerik, `df.descri
 * `loudness`: Kenyaringan rata-rata adalah -9.57 dB.
 * `tempo`: Tempo rata-rata lagu adalah sekitar 117.67 BPM. Statistik ini membantu memahami skala dan distribusi nilai awal dari masing-masing fitur numerik.   
 
-3.Pemeriksaan Nilai Hilang (Missing Values)   
+3. Pemeriksaan Nilai Hilang (Missing Values)   
 Hasil dari `df.isnull().sum()` secara eksplisit mengonfirmasi bahwa hanya terdapat satu nilai yang hilang dalam keseluruhan dataset, yaitu pada kolom track_name.   
 
 4. Pemeriksaan Data Duplikat   
@@ -100,12 +100,14 @@ Dengan menjalankan `df.duplicated().sum()`, dipastikan bahwa tidak ada baris dat
 5. Distribusi Popularitas Lagu   
 Untuk memvisualisasikan sebaran skor popularitas lagu, sebuah histogram dibuat. Grafik ini dengan jelas menunjukkan bahwa distribusi skor popularity bersifat condong ke kanan (right-skewed). Artinya, mayoritas lagu dalam dataset memiliki skor popularitas yang lebih rendah, dan jumlah lagu menurun seiring dengan meningkatnya skor popularitas. Hanya sebagian kecil lagu yang memiliki popularitas sangat tinggi. Insight ini penting karena mengindikasikan bahwa sistem mungkin perlu menangani banyak lagu yang bersifat niche atau kurang dikenal.   
 Berikut adalah hasil visualisasi popularitas lagu:   
+![output1](https://github.com/user-attachments/assets/cdc962c6-ec96-4713-bf28-ece0cbb76b13)
 
 
 6. Komposisi Genre Teratas   
 Sebuah plot batang horizontal digunakan untuk menampilkan 10 genre dengan frekuensi kemunculan tertinggi dalam dataset (berdasarkan kolom ï»¿genre sebelum nama variabel diubah). Visualisasi ini secara efektif mengidentifikasi genre-genre musik yang paling dominan atau paling banyak terwakili dalam data, genre genre tersebut adalah comedy, soundtrack, indie, jazz, pop, electronic, children's music, folk, hip-hop, rock. Ini memberikan pemahaman tentang genre mana yang paling banyak terwakili dalam data.   
 Insight ini penting karena menunjukkan bahwa dataset memiliki representasi yang kuat untuk genre-genre tersebut. Hal ini bisa menjadi pertimbangan dalam mengevaluasi seberapa baik sistem rekomendasi dapat melayani preferensi pada genre-genre populer ini, atau sebaliknya, bagaimana sistem dapat memberikan rekomendasi untuk genre yang kurang dominan. Pemahaman komposisi genre juga berguna jika ada keinginan untuk membuat sistem rekomendasi yang lebih spesifik atau seimbang antar genre.   
 Berikut adalah hasil visualisasi komposisi genre teratas :   
+![output2](https://github.com/user-attachments/assets/79b9fadd-0ca2-4a13-abfc-85d00553affa)
 
 
 7. Matriks Korelasi antar Fitur Numerik Audio   
@@ -120,16 +122,19 @@ Untuk memahami hubungan linear antar berbagai fitur audio numerik (termasuk popu
 * Fitur duration_ms (durasi lagu) secara umum memiliki korelasi yang lemah dengan sebagian besar fitur audio lainnya, yang menunjukkan durasi tidak secara langsung linear terkait dengan karakteristik audio tersebut.
 * Fitur tempo juga tidak menunjukkan korelasi yang sangat dominan, korelasi terkuatnya adalah positif dengan energy dan loudness (keduanya sekitar 0.23) dan negatif dengan acousticness (sekitar -0.24).   
 Berikut adalah hasil visualisasi matriks korelasi antar numerik audio :   
+![output3](https://github.com/user-attachments/assets/8ae7f98e-0b86-4ffb-8eda-af12b66d7c97)
 
 
 8. Distribusi Durasi Lagu   
 Distribusi durasi lagu, yang ditampilkan dalam satuan menit untuk kemudahan interpretasi, juga menunjukkan pola yang condong ke kanan (right-skewed). Ini berarti sebagian besar lagu memiliki durasi standar yang umum di industri musik (misalnya, 2 hingga 5 menit), namun terdapat juga sejumlah lagu dengan durasi yang jauh lebih pendek atau lebih panjang dari rata-rata.   
 Berikut adalah hasil visualisasi distribusi durasi lagu :   
+![output4](https://github.com/user-attachments/assets/a1b6e7f9-48d8-422e-be0e-4c6b8c8ee370)
  
 
 9. Artis dengan Kontribusi Lagu Terbanyak
 Plot batang ini menampilkan 10 artis yang memiliki jumlah lagu paling banyak dalam dataset. Visualisasi ini memberikan gambaran tentang artis-artis mana yang paling produktif atau paling banyak terwakili dalam data yang digunakan untuk proyek ini. Grafik ini secara visual menunjukkan artis mana yang mendominasi dataset dari segi jumlah lagu. Giuseppe Verdi, misalnya, terlihat memiliki kontribusi lagu tertinggi secara signifikan dibandingkan artis lainnya dalam 10 besar.   
 Berikut adalah hasil visualisasi kontribusi lagu terbanyak : 
+![output6](https://github.com/user-attachments/assets/4468ac40-4011-4d2c-91f2-cfa239dc17c6)
 
 
 ## Data Preparation
@@ -294,6 +299,7 @@ textsimilarity(item_i,item_j) adalah skor kemiripan (cosine similarity) antara l
 
 * Hasil: Berdasarkan eksperimen, Solusi 1 memiliki hasil yaitu 0.8594, 0.9940, 0.8847 dan jika kita hitung ketiga hasil tersebut menjadi rata-rata, maka rata-rata ILS 0.9127, sedangkan Solusi 2 memiliki hasil yaitu 0.9894, 0.8588, 0.7866 dan skor rata-rata dari ketiga hasil tersebut lebih rendah yaitu 0.8782.
 * Visualisasi:
+![output7](https://github.com/user-attachments/assets/0830622d-4084-4e59-a28d-5d71b0fbbe2b)
 
 
 * Analisis: Hasil ini mengkonfirmasi bahwa Solusi 2 lebih unggul dalam hal keberagaman. Proses re-ranking berdasarkan popularitas berhasil memasukkan lagu-lagu yang mungkin tidak "paling mirip" dari segi konten murni, sehingga memecah homogenitas dan menyajikan daftar yang lebih bervariasi kepada pengguna.   
@@ -316,6 +322,7 @@ textpopularity(item_i) adalah skor popularitas dari lagu ke-i.
 Formula untuk satu daftar rekomendasi L dengan N item adalah:
 * Hasil: Solusi 1 menunjukkan hasil yaitu 1.6, 3.0, 60.8 dan rata-rata popularitas 21.80, yang secara signifikan lebih rendah dibandingkan Solusi 2 dengan skor hasil yaitu 12.0, 20.0, 59.8 dan rata-rata 30.60.
 * Visualisasi:
+![output8](https://github.com/user-attachments/assets/e3a80eaa-a1f4-4035-a9b3-a601e1b95a6c)
 
 
 * Analisis: Solusi 1 secara jelas lebih unggul dalam menyajikan lagu-lagu yang novel. Dengan tidak adanya bias eksplisit terhadap popularitas dalam penentuan peringkat akhir, model ini mampu merekomendasikan "permata tersembunyi" yang relevan secara konten. Sebaliknya, Solusi 2, sesuai dengan desainnya, cenderung merekomendasikan lagu-lagu yang sudah populer.   
@@ -338,6 +345,10 @@ L_u adalah daftar rekomendasi untuk satu permintaan u.
 * Hasil: Dalam estimasi yang dilakukan pada 50 lagu query, kedua solusi menunjukkan hasil coverage yang hampir identik dan dapat dianggap setara.   
 Solusi 1: 0.0017 (merekomendasikan 249 lagu unik)   
 Solusi 2: 0.0017 (merekomendasikan 250 lagu unik)   
+* Visualisasi:
+![output9](https://github.com/user-attachments/assets/b42089ee-6710-4797-9a7e-c36f650a21c9)
+
+
 * Analisis: Hasil ini menunjukkan bahwa, pada skala pengujian ini, mekanisme re-ranking pada Solusi 2 tidak secara signifikan membatasi jangkauan katalog dibandingkan Solusi 1. Ini bisa jadi karena jumlah kandidat awal (M=20) yang diambil sebelum re-ranking sudah cukup beragam, sehingga item unik yang muncul di top-N tetap bervariasi. Dapat disimpulkan bahwa untuk metrik ini, tidak ada perbedaan performa yang signifikan antara kedua solusi.   
 
 **Ringkasan Evaluasi dan Kesimpulan**
